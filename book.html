@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aetheria // Terminals & Telemetry</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/forms.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="terminals.html">Terminals</a></li>
+                <li><a href="book.html">Dispatch & Quantum Booking</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="booking-header">
+        <h2>QUANTUM DISPATCH TERMINAL</h2>
+        <div class="status-badge">
+            <span class="status-dot"></span>
+            <span class="status-text">DISPATCH CORE: ONLINE & STABLE</span>
+        </div>
+    </div>
+    <div class="form-wrapper">
+        <form action="" class="booking-form">
+            <div class="form-group">
+                <label for="fullname">Passenger Full Name</label>
+                <input type="text" id="fullname" name="fullname" placeholder="eg. Dr. Alex Vance">
+            </div>
+            <div class="form-group">
+                <label for="email">Quantum Comm ID (Email)</label>
+                <input type="email" id="email" name="email" placeholder="alex@aetheria.grid" required>
+            </div>
+            <div class="form-group">
+                <label for="mass">Bio/Cargo Mass (kg)</label>
+                <input type="number" id="mass" name="mass" placeholder="Max 25kg standard" min="1" max="100" required>
+            </div>
+            <div class="form-group">
+                <label for="destination">Destination Jump Node</label>
+                <select id="destination" name="destination" required>
+                    <option value="" disabled selected>Select destination node...</option>
+                    <option value="prime-central">Node 00 — Prime Central (Earth Sector)</option>
+                    <option value="tokyo">Node 01 — Neo-Tokyo Orbital</option>
+                    <option value="venus">Node 03 — Atmospheric Station Venus</option>
+                    <option value="lunar">Node 07 — Lunar Base Delta</option>
+                    <option value="phobos">Node 09 — Phobos Transfer Array</option>
+                    <option value="mars">Node 12 — Olympus Mons Station</option>
+                    <option value="chronos">Node 13 — Chronos Deep-Sync Pod</option>
+                    <option value="enceladus">Node 15 — Enceladus Cryo-Port</option>
+                    <option value="europa">Node 19 — Europa Sub-Ice Hub</option>
+                    <option value="ceres">Node 22 — Ceres Mining Exchange</option>
+                    <option value="titan">Node 24 — Titan Methane Station</option>
+                    <option value="io">Node 31 — Io Volcanic Outpost</option>
+                    <option value="oort">Node 42 — Oort Cloud Gateway</option>
+                    <option value="proxima">Node 48 — Proxima Centauri Waypoint</option>
+                    <option value="kuiper">Node 54 — Kuiper Belt Gate</option>
+                    <option value="marineris">Node 77 — Valles Marineris Canyon Hub</option>
+                    <option value="orion">Node 88 — Orion Nebula Relay</option>
+                    <option value="sub-quark">Node 90 — Sub-Quark Mirror Terminal</option>
+                    <option value="alpha-centauri">Node 99 — Alpha Centauri Vector</option>
+                    <option value="andromeda">Node 101 — Andromeda Frontier Spire</option>
+
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="departure">Scheduled Jump Window</label>
+                <input type="datetime-local" id="departure" name="departure" required>
+            </div>
+            <div class="form-group full-width">
+                <label>Select Transit Class</label>
+                <div class="radio-group full width">
+                    <label class="radio-option fullwidth">
+                        <input type="radio" name="transit_class" value="standard" checked>
+                        <span>Standard Pod (Coherence 99.9%)</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="transit_class" value="chronos">
+                        <span>Chronos First Class (VIP Neural Sync)</span>
+                    </label>
+                </div>
+            </div>
+            <div class="form-group full-width">
+                <label>Safety Protocols and Protection</label>
+                <div class="checkbox-group">
+                    <label class="checkbox-option">
+                        <input type="checkbox" name="insurance" checked>
+                        <span>Molecular Entanglement Protection(+500cr)</span>
+                    </label>
+                    <label class="checkbox-option">
+                        <input type="checkbox" name="stasis" checked>
+                        <span>Sub-Zero Stasis Chamber During Jump</span>
+                    </label>
+                </div>
+
+            </div>
+            <button type="submit" class="submit-btn fullwidth">LOCK IN DISPATCH COORDINATES</button>
+        </form>
+    </div>
+
+    </div>
+</body>
+
+</html>
