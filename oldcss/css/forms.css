@@ -58,7 +58,7 @@
 }
 
 .status-badge {
-    display: inline-flex;
+    display:inline-flex;
     align-items: center;
     gap: 10px;
     background: rgba(0, 240, 255, 0.08);
@@ -71,7 +71,6 @@
 }
 
 .status-dot {
-    display:inline-block;
     width: 10px;
     height: 10px;
     background-color: #00f0ff;
