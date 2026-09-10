@@ -34,3 +34,9 @@
     background-color: rgba(0, 240, 255, 0.15);
     transition: background-color 0.2s ease;
 }
+.status-ready{
+    color:rgb(50, 255, 47)
+}
+.status-warn{
+    color:rgba(255, 119, 0, 0.829)
+}
