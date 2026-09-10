@@ -1,69 +1,55 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>
-            To get started, edit the{" "}
-            <code className={styles.code}>page.js</code> file.
-          </h1>
+    <div>
+      <div className="container">
+        <nav className="nav">
+          <ul>
+            <li><Link href="/">Home</Link></li>
+            <li><Link href="/telemetry">Terminals</Link></li>
+            <li><Link href="/booking">Dispatch and Quantum Booking</Link></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div className="hero">
+        <div className="hero-left">
+          <h1 className="hero-title">AETHERIA // QUANTUM CORE</h1>
+          <p className="hero-slogan">Distance is an Illusion. Arrive Anywhere, Instantly.</p>
+          <Link href="/booking" className="cta-button">Initiate Quantum Jump</Link>
+        </div>
+
+        <div className="hero-right">
+          <h3>SYSTEM OVERVIEW</h3>
           <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
+            Pioneering safe, intra-planetary molecular transport since 2088.
+            Our quantum entanglement networks boast 99.99% atomic reassembly fidelity across 40+ planetary jump nodes.
           </p>
+          <div className="features">
+            <div className="feature-card">
+              <span className="card-header">01 // HUB</span>
+              <h3 className="card-data">142</h3>
+              <p className="card-info">Active Nodes</p>
+            </div>
+            <div className="feature-card">
+              <span className="card-header">02 // SYNC</span>
+              <h3 className="card-data">99.9%</h3>
+              <p className="card-info">Coherence</p>
+            </div>
+            <div className="feature-card">
+              <span className="card-header">03 // SPEED</span>
+              <h3 className="card-data">0.004s</h3>
+              <p className="card-info">Transit Lag</p>
+            </div>
+            <div className="feature-card">
+              <span className="card-header">04 // SAFE</span>
+              <h3 className="card-data">100%</h3>
+              <p className="card-info">Bio-Recall</p>
+            </div>
+          </div>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </div>
     </div>
   );
 }
