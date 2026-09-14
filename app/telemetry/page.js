@@ -1,54 +1,44 @@
 "use client";
 import { useState, useEffect } from "react";
-import Link from "next/link";
+import SiteNav from "../components/SiteNav";
 
 export default function Telemetry() {
-  const [nodes, setNodes] = useState([
-    { id: "ND-01", destination: "Neo-Tokyo Orbital", frequency: "432.8 THz", coherence: "99.99%", status: "ONLINE" },
-    { id: "ND-07", destination: "Lunar Base Delta", frequency: "891.2 THz", coherence: "99.94%", status: "ONLINE" },
-    { id: "ND-12", destination: "Olympus Mons Station", frequency: "120.4 THz", coherence: "98.50%", status: "CALIBRATING" },
-    { id: "ND-19", destination: "Europa Sub-Ice Hub", frequency: "654.1 THz", coherence: "99.98%", status: "ONLINE" },
-  ]);
+  const [nodes, setNodes] = useState([]);
   const [search, setSearch] = useState("");
+   useEffect(() => {
+    fetch("https://0201243d-ed25-4b62-8a3e-c376d4eef70a.mock.pstmn.io/departures")
+      .then((res) => res.json())
+      .then((data) => setNodes(data));
+  }, []);
   const visibleNodes = nodes.filter((node) =>
     node.destination.toLowerCase().includes(search.toLowerCase())
   );
 
-  useEffect(() => {
+  useEffect(() =>{
     const timer = setInterval(() => {
       const seconds = new Date().getSeconds();
       let currentStatus;
       if (seconds < 10) {
         currentStatus = "BOARDING";
-      } else if (seconds < 15) {
+      } else if (seconds < 15){
         currentStatus = "DEPARTED";
       } else {
         currentStatus = "ONLINE";
       }
-
       setNodes((prevNodes) =>
         prevNodes.map((node) => ({ ...node, status: currentStatus }))
       );
     }, 1000);
-
     return () => clearInterval(timer);
   }, []);
 
   return (
     <div>
-      <div className="container">
-        <nav className="nav">
-          <ul>
-            <li><Link href="/">Home</Link></li>
-            <li><Link href="/telemetry">Terminals</Link></li>
-            <li><Link href="/booking">Dispatch & Quantum Booking</Link></li>
-          </ul>
-        </nav>
-      </div>
+      <SiteNav />
 
       <div className="section-block">
         <h2 className="section-title">LIVE TERMINAL DISPATCH</h2>
-        <input
+        <input className="search-input"
           type="text"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
@@ -61,8 +51,8 @@ export default function Telemetry() {
               <tr>
                 <th>NODE ID</th>
                 <th>DESTINATION HUB</th>
-                <th>FREQUENCY</th>
-                <th>COHERENCE</th>
+                <th>ORIGIN HUB</th>
+                <th>CLASS</th>
                 <th>STATUS</th>
               </tr>
             </thead>
@@ -71,8 +61,8 @@ export default function Telemetry() {
                 <tr key={node.id}>
                   <td>{node.id}</td>
                   <td>{node.destination}</td>
-                  <td>{node.frequency}</td>
-                  <td>{node.coherence}</td>
+                  <td>{node.originHub}</td>
+                  <td>{node.class}</td>
                   <td>
                     <span className={node.status === "ONLINE" ? "status-ready" : "status-warn"}>
                       {node.status}

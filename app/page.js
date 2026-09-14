@@ -1,17 +1,10 @@
 import Link from "next/link";
+import SiteNav from "./components/SiteNav";
 
 export default function Home() {
   return (
     <div>
-      <div className="container">
-        <nav className="nav">
-          <ul>
-            <li><Link href="/">Home</Link></li>
-            <li><Link href="/telemetry">Terminals</Link></li>
-            <li><Link href="/booking">Dispatch and Quantum Booking</Link></li>
-          </ul>
-        </nav>
-      </div>
+      <SiteNav />
 
       <div className="hero">
         <div className="hero-left">

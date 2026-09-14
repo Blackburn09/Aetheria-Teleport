@@ -221,3 +221,65 @@
     height: 16px;
     cursor: pointer;
 }
+.confirmation-panel {
+    size: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 20px;
+    color: #00f0ff;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 20px;
+}
+.confirmation-panel h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+.confirmation-panel p {
+  font-size: 16px;
+  margin: 6px 0;
+  color: #00f0ff;
+}
+.confirmation-panel button{
+    display: inline-block;
+    width: 30%;                 
+    padding: 14px 28px;
+    margin-top: 10px;
+    
+    
+    background-color: transparent;
+    border: 2px solid #00f0ff;    
+    border-radius: 8px;
+    color: #00f0ff;
+    
+    
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    
+    
+    transition: all 0.3s ease;
+}
+
+.confirmation-panel button:hover{
+    background-color: #00f0ff;
+    color: #000000;              
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.6);
+    transform: translateY(-2px);
+}
+
+.confirmation-panel button:focus{
+    outline: none;
+    border-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(0, 240, 255, 0.4);
+}
+
+.confirmation-panel button:active{
+    transform: scale(0.98);     
+}
+
